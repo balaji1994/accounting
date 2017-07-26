@@ -17,29 +17,47 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/login.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+  .config(function ($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
+    // $routeProvider
+    //   .when('/', {
+    //     templateUrl: 'views/login.html',
+    //     controller: 'MainCtrl',
+    //     controllerAs: 'main'
+    //   })
+    //   .when('/register', {
+    //     templateUrl: 'views/register.html',
+    //     controller: 'AboutCtrl',
+    //     controllerAs: 'about'
+    //   })
+    //   .otherwise({
+    //     redirectTo: '/'
+    //   });
+    $urlRouterProvider.otherwise('/login');
+    $stateProvider
+    .state('login', {
+                url: '/login',
+                views: {
+                    '@': {
+                        templateUrl: 'views/login.html',
+                        controller: 'MainCtrl',
+                        controllerAs:'login'
+                    }
+                }
       })
-      .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+    .state('register', {
+                url: '/register',
+                views: {
+                    '@': {
+                        templateUrl: 'views/register.html',
+                        controller: 'MainCtrl',
+                        controllerAs:'login'
+                    }
+                }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  //   $stateProvider
-  //   .state({
-  //   name: 'hello',
-  //   url: '/hello',
-  //   template: 'views/login.html'
-  // })
+
 
       $locationProvider.hashPrefix('');
   });
