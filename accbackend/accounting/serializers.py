@@ -7,3 +7,11 @@ class UsersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
         fields = ('id', 'first_name', 'email')
+
+
+
+class Signup(serializers.ModelSerializer):
+
+	class Meta:
+		model = Users
+		fields = '__all__'

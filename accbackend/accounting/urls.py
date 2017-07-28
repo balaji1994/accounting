@@ -8,4 +8,6 @@ from .views import userlogin
 urlpatterns = [
     url(r'^validate/$', userlogin.validate),
     url(r'^checkuser/$', userlogin.check_user),
+    url(r'^checkaccno/$', userlogin.check_accountno),
+    url(r'^signup/$', userlogin.signup),
 ]

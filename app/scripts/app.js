@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ngValidate'
   ])
   .config(function ($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
     // $routeProvider
@@ -52,7 +53,7 @@ angular
                 views: {
                     '@': {
                         templateUrl: 'views/register.html',
-                        controller: 'MainCtrl',
+                        controller: 'registerCtrl',
                         controllerAs:'login'
                     }
                 }

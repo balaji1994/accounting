@@ -8,10 +8,10 @@
  * Controller of the accountingApp
  */
 angular.module('accountingApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('registerCtrl', function ($scope,$state,Auth,$cookieStore) {
+    var self = this;
+    self.scope = $scope;
+
+    //function
+    self.scope.signUp = signUp;
   });

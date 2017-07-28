@@ -13,7 +13,7 @@ from rest_framework.decorators import api_view
 #     Users, JobType, JobAddress, JobTime_Budget, JobRequirements, Postal_code, Cities)
 # from childcare.serializers import UsersSerializer, JobtypeSerializer, JobAddressSerializer, JobTime_BudgetSerializer, JobRequirementsSerializer
 from accounting.models import (Users)
-from accounting.serializers import (UsersSerializer) 
+from accounting.serializers import (UsersSerializer, Signup) 
 from django.shortcuts import render
 from templated_email import send_templated_mail
 from templated_email import InlineImage
