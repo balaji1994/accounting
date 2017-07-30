@@ -104,3 +104,35 @@ def check_accountno(request):
             result = {"Status":"500","message":"Need Account number to check!!"}
             return JSONResponse(result)
 
+
+@csrf_exempt
+def sendemail(request):
+    if request.method == "POST":
+        data = JSONParser().parse(request)
+        sendemail = 'info@exotigo.in'
+        # sendemail = "ksathickali124045@gmail.com"
+        from_email = 'ksathickali124045@gmail.com'
+        name = data['name']
+        surname = data['surname']
+        city = data['city']
+        country = data['country']
+        email =data['email']
+        phonenumber = data['phonenumber']
+        message = data['message']
+        # return HttpResponse(act_link)
+        send_templated_mail(
+            template_name='welcome',
+            from_email=from_email,
+            recipient_list=[sendemail],
+            context={
+                'name': name,
+                'surname': surname,
+                'city': city,
+                'country': country,
+                'email': email,
+                'phone': phonenumber,
+                'message': message
+            },
+        )
+        print("mail sent")
+    return HttpResponse('Success')

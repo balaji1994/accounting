@@ -72,6 +72,13 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBackend'
+EMAIL_HOST = 'smtp.emailsrvr.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'balaji.om@optisolbusiness.com'
+EMAIL_HOST_PASSWORD = 'Optisol_123'
+
 WSGI_APPLICATION = 'accbackend.wsgi.application'
 
 

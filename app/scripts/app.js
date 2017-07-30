@@ -53,8 +53,8 @@ angular
                 views: {
                     '@': {
                         templateUrl: 'views/register.html',
-                        controller: 'registerCtrl',
-                        controllerAs:'login'
+                        controller: 'SignupCtrl',
+                        controllerAs:'reg'
                     }
                 }
       })

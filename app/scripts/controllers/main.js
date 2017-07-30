@@ -71,20 +71,7 @@ angular.module('accountingApp')
 	    		}
 	    		else{
 	    			self.scope.userNotexists = true;
-	    			var accno = Math.floor(Math.random()*90000) + 10000;
-	    			var is_unique = false;
-	    			var data = {};
-	    			data['account_no'] = accno;
-	    			while(!is_unique){
-	    				Auth.checkaccno(data,function(response){
-	    				if(response.Status == "200"){
-	    					$cookieStore.put('account_no',accno);
-	    					$state.go('register');
-	    				}
-	    			});
-	    			
-	    			}
-	    			
+	    			$state.go('register');
     		}
     	});
     }

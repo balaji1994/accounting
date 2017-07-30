@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^checkuser/$', userlogin.check_user),
     url(r'^checkaccno/$', userlogin.check_accountno),
     url(r'^signup/$', userlogin.signup),
+    url(r'^sendemail/$', userlogin.sendemail),
 ]
